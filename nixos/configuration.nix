@@ -80,6 +80,8 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.unbound.enable = true;
+
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
   services.avahi.ipv6 = true;
