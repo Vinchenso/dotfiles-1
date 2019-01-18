@@ -42,6 +42,12 @@
     }
   ];
 
+  boot.initrd.availableKernelModules = [
+    "aes_x86_64"
+    "aesni_intel"
+    "cryptd"
+  ];
+
   programs.zsh.enable = true;
   programs.light.enable = true;
   programs.mosh.enable = true;
