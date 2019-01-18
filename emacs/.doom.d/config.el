@@ -68,7 +68,8 @@
 
 (map! :leader
      :prefix "f"
-     "n" (lambda! (find-file "~/dotfiles/nixos/configuration.nix")))
+     "n" (lambda! (find-file "~/dotfiles/nixos/configuration.nix"))
+     "N" (lambda! (find-file "~/dotfiles/nixos/home.nix")))
 
 (after! helm
   ;; I want backspace to go up a level, like ivy
