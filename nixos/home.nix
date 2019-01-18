@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     htop qutebrowser emacs termite networkmanagerapplet dunst libnotify rofi mpv
     pass rofi-pass discord gimp (polybar.override {i3GapsSupport = true;})
-    tldr bat
+    tldr bat pavucontrol
 
     #betterlockscreen stuff
     i3lock-color imagemagick xorg.xdpyinfo xorg.xrandr bc feh
