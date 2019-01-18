@@ -31,8 +31,15 @@ alias l="light -S"
 
 alias k="exa -lh"
 
-[[ -e /usr/share/skim/key-bindings.zsh ]] && . /usr/share/skim/key-bindings.zsh
-[[ -e /usr/share/skim/completion.zsh ]] && . /usr/share/skim/completion.zsh
+SKIM_PATH="/usr/share/skim"
+
+# imperative, ew
+if command -v sk-share > /dev/null; then
+  SKIM_PATH=$(sk-share)
+fi
+
+. "$SKIM_PATH/key-bindings.zsh"
+. "$SKIM_PATH/completion.zsh"
 
 
 alias ag="echo use rg"
