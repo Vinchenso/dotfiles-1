@@ -36,3 +36,6 @@ alias k="exa -lh"
 
 
 alias ag="echo use rg"
+
+# Nixos zsh adds the cwd to RPS1. Why.
+export RPS1=""
