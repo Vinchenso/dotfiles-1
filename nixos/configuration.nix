@@ -27,9 +27,10 @@
 
 
   fonts.fonts = with pkgs; [
-    iosevka fira-code-symbols noto-fonts noto-fonts-emoji
+    fira-code-symbols noto-fonts noto-fonts-emoji
   ];
   fonts.fontconfig.ultimate.enable = true;
+  fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
