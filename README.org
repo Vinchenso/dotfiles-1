@@ -34,3 +34,8 @@ mailpasswd() that returns the password
 You have to install `rofi-pass` for pass-store integration.
 
 You can also install rofimoji for an emoji picker https://github.com/fdw/rofimoji
+** Nixos
+Nixos can't be stow'd, so my setup is configuration.nix and hardware are
+symlinked to /etc/nixos/ and home.nix is a
+[home-manager](https://github.com/rycee/home-manager) thing which is symlinked
+to \~/.config/nixpkgs
