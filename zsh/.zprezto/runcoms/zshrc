@@ -24,7 +24,7 @@ r() {
 }
 
 alias d="mktemp -d | tee /dev/stderr"
-alias 'd.=$(mktemp -d)'
+alias d.="$(mktemp -d)"
 
 alias path="sed 's/:/\n/g' <<< $PATH"
 alias l="light -S"
