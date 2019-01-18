@@ -68,7 +68,7 @@
 
 (map! :leader
      :prefix "f"
-     "n" (lambda! (doom/sudo-find-file "/etc/nixos/configuration.nix")))
+     "n" (lambda! (find-file "~/dotfiles/nixos/configuration.nix")))
 
 (after! helm
   ;; I want backspace to go up a level, like ivy
