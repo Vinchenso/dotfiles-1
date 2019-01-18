@@ -14,14 +14,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim emacs git ripgrep qutebrowser i3 fd stow termite networkmanagerapplet
-    exa dunst libnotify nix-index rofi mpv gnupg skim pass rofi-pass discord
-    atool file gimp
-    (polybar.override {i3GapsSupport = true;})
-
-
-    #betterlockscreen stuff
-    i3lock-color imagemagick xorg.xdpyinfo xorg.xrandr bc feh
+    wget vim git ripgrep i3 fd stow exa nix-index gnupg skim atool file
   ];
 
 
@@ -116,6 +109,8 @@
   services.xserver.libinput.enable = true;
   services.xserver.libinput.disableWhileTyping = true;
 
+  # Idealy this would be in home.nix now but that means I have to set up syncing
+  # *again* and fuck that
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
@@ -144,5 +139,4 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "18.09"; # Did you read the comment?
-
 }
