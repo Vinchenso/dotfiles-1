@@ -30,7 +30,8 @@
     fira-code-symbols noto-fonts noto-fonts-emoji font-awesome_5
   ];
   fonts.fontconfig.ultimate.enable = true;
-  fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
+  fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ]; # font installed in
+                                                           # ~/.local/share/fonts
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
