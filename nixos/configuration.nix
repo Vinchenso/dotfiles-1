@@ -49,6 +49,7 @@
   ];
 
   programs.zsh.enable = true;
+  programs.light.enable = true;
 
   networking.hostName = "Rhenium"; # Define your hostname.
   networking.networkmanager.enable = true;  # Enables wireless support via wpa_supplicant.
