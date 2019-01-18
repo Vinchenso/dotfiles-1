@@ -74,6 +74,8 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.openssh.passwordAuthentication = false;
+  services.openssh.challengeResponseAuthentication = false;
 
   services.unbound.enable = true;
 
