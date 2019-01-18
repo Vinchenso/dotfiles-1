@@ -110,6 +110,7 @@
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
   services.xserver.libinput.disableWhileTyping = true;
+  services.xserver.libinput.tapping = false;
 
   # Idealy this would be in home.nix now but that means I have to set up syncing
   # *again* and fuck that
