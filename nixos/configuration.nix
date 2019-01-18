@@ -16,6 +16,7 @@
   environment.systemPackages = with pkgs; [
     wget vim emacs git ripgrep qutebrowser i3 fd stow termite networkmanagerapplet
     exa dunst libnotify nix-index rofi mpv gnupg skim pass rofi-pass discord
+    atool
     (polybar.override {i3GapsSupport = true;})
 
 
