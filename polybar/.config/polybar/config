@@ -53,13 +53,13 @@ module-margin-left = 0
 
 tray-position = left
 
-;amodules-right = updates date menu0
+;amodules-right = date menu0
 ;modules-center = mpd
 ;modules-left = cpu memory filesystem
 
 modules-right = battery i3 menu0
 modules-center = date
-modules-left = cpu memory updates
+modules-left = cpu memory
 
 separator = "      "
 
