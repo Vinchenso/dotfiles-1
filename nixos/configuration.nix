@@ -15,8 +15,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget vim emacs git ripgrep qutebrowser i3 fd stow termite networkmanagerapplet
-    iosevka fira-code-symbols exa dunst libnotify nix-index rofi mpv
-    (polybar.override {i3GapsSupport = true;}) gnupg skim pass rofi-pass discord
+    exa dunst libnotify nix-index rofi mpv gnupg skim pass rofi-pass discord
+    (polybar.override {i3GapsSupport = true;})
 
 
     #betterlockscreen stuff
@@ -25,7 +25,9 @@
 
 
 
-  fonts.fonts = with pkgs; [ iosevka fira-code-symbols ];
+  fonts.fonts = with pkgs; [
+    iosevka fira-code-symbols noto-fonts noto-fonts-emoji
+  ];
   fonts.fontconfig.ultimate.enable = true;
 
   # Use the systemd-boot EFI boot loader.
