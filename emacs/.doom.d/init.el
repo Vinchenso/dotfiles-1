@@ -129,16 +129,16 @@
        rotate-text
 
        :completion
-       (lsp
-        ;; +javascript
-        +go
-        +css
-        ;+rust
-        +cpp
-        +ocaml
-        +java
-        +python
-        +sh)
+       ;; (lsp
+       ;;  ;; +javascript
+       ;;  +go
+       ;;  +css
+       ;;  ;+rust
+       ;;  +cpp
+       ;;  +ocaml
+       ;;  +java
+       ;;  +python
+       ;;  +sh)
 
        :config
        ;; The default module set reasonable defaults for Emacs. It also provides
