@@ -21,6 +21,17 @@
       userEmail = "aria@ar1as.space";
     };
 
+    rofi = {
+      enable = true;
+      extraConfig = ''
+      rofi.modi: window,run,ssh,combi
+      rofi.ssh-client: mosh
+      rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+      rofi.combi-modi: window,drun,ssh
+      '';
+      terminal = "termite";
+      theme = "Arc-Dark";
+    };
 
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
