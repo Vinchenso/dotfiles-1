@@ -48,6 +48,7 @@
   ];
 
   programs.zsh.enable = true;
+  programs.zsh.promptInit = "";
   programs.light.enable = true;
   programs.mosh.enable = true;
 
