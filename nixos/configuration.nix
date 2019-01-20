@@ -136,7 +136,7 @@
     isNormalUser = true;
     uid = 1000;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "video" ];
   };
 
   nixpkgs.config.allowUnfree = true;
