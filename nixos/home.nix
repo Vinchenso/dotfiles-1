@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     htop qutebrowser emacs termite networkmanagerapplet dunst libnotify mpv
     pass rofi-pass discord gimp tldr bat pavucontrol spectacle xclip gibo
-    spotify
+    spotify nmap
 
     #betterlockscreen stuff
     i3lock-color imagemagick xorg.xdpyinfo xorg.xrandr bc feh
