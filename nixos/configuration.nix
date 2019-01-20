@@ -20,7 +20,7 @@
 
 
   fonts.fonts = with pkgs; [
-    fira-code-symbols noto-fonts noto-fonts-emoji font-awesome_5
+    fira-code-symbols noto-fonts noto-fonts-emoji noto-fonts-cjk font-awesome_5
   ];
   fonts.fontconfig.ultimate.enable = true;
   fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ]; # font installed in
