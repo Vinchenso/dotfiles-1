@@ -139,8 +139,6 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
-  security.sudo.wheelNeedsPassword = false;
-
   nixpkgs.config.allowUnfree = true;
 
   # This value determines the NixOS release with which your system is to be
