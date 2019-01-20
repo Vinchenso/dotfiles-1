@@ -177,7 +177,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 # smart_gaps on
 smart_borders on
-exec_always --no-startup-id ~/.config/i3/polybar.sh
 
 # Global gaps size
 # gaps inner 10 gaps outer 15
