@@ -18,6 +18,10 @@
       enable = true;
       userName = "Aria Edmonds";
       userEmail = "aria@ar1as.space";
+      extraConfig = ''
+      [github]
+      user = ar1a
+      '';
     };
 
     rofi = {
