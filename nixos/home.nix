@@ -62,8 +62,6 @@
 
       "bar/bottom" = {
         bottom = true;
-        dock = false;
-        wm-restack = "i3";
         fixed-center = true;
         border-size = 0;
 
