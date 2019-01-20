@@ -34,6 +34,7 @@ floating_modifier $mod
 exec --no-startup-id betterlockscreen -w
 exec --no-startup-id zsh /home/aria/tmuxify.sh
 exec --no-startup-id barrier
+exec --no-startup-id systemctl --user restart polybar
 bindsym $mod+shift+x exec --no-startup-id betterlockscreen -l dimblur
 # binds
 bindsym $mod+Return exec --no-startup-id termite
