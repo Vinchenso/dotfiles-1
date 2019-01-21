@@ -35,7 +35,7 @@
   boot.initrd.luks.devices = [
     {
       name = "root";
-      device = "/dev/sda2";
+      device = "/dev/disk/by-uuid/29f7dde5-7594-4783-938b-8a01294c687c";
       preLVM = true;
       allowDiscards = true;
     }
