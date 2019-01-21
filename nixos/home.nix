@@ -80,7 +80,7 @@
         padding-right = 2;
         tray-position = "left";
 
-        modules-right = "battery i3 menu0";
+        modules-right = "battery i3";
         modules-center = "date";
         modules-left = "cpu memory";
         separator = "     ";
@@ -145,23 +145,6 @@
         label-visible-padding = 1;
       };
 
-      "module/menu0" = {
-        type = "custom/menu";
-
-        format = "<label-toggle> <menu>";
-        format-padding = 1;
-
-        format-foreground = "\${colors.red}";
-
-        menu-0-0 = " shutdown ";
-        menu-0-0-exec = "shutdown now";
-        menu-0-1 = " restart ";
-        menu-0-1-exec = "shutdown -r now";
-        menu-0-2 = "  cancel";
-
-
-        label-open = "";
-      };
 
       "module/date" = {
         type = "internal/date";
