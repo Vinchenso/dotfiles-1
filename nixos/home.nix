@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    htop qutebrowser emacs termite networkmanagerapplet dunst libnotify mpv
+    htop qutebrowser termite networkmanagerapplet dunst libnotify mpv
     pass rofi-pass discord gimp tldr bat pavucontrol spectacle xclip gibo
     spotify nmap
 
@@ -18,6 +18,8 @@
     firefox = {
       enable = true;
     };
+
+    emacs.enable = true;
 
     git = {
       enable = true;
