@@ -14,7 +14,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim git ripgrep i3 fd stow exa nix-index gnupg skim atool file tmux
+    wget vim git ripgrep i3 fd stow exa nix-index gnupg skim atool file tmux pv
   ];
 
 
