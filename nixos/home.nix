@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     htop qutebrowser termite networkmanagerapplet dunst libnotify mpv pass
     rofi-pass discord gimp tldr bat pavucontrol spectacle xclip gibo spotify
-    nmap
+    nmap binutils units
 
     #betterlockscreen stuff
     i3lock-color imagemagick xorg.xdpyinfo xorg.xrandr bc feh
@@ -12,6 +12,7 @@
     #haskell
     cabal-install cabal2nix haskellPackages.styx ghc
     (pkgs.haskellPackages.callCabal2nix "fullwidth" ~/projects/fullwidth {})
+    (pkgs.haskellPackages.callCabal2nix "polishnt" ~/projects/polishnt {})
   ];
 
   programs = {
