@@ -6,9 +6,6 @@
     rofi-pass discord gimp tldr bat pavucontrol spectacle xclip gibo spotify
     nmap binutils units ffmpeg
 
-    #betterlockscreen stuff
-    i3lock-color imagemagick xorg.xdpyinfo xorg.xrandr bc feh
-
     #haskell
     cabal-install cabal2nix haskellPackages.styx ghc
     (pkgs.haskellPackages.callCabal2nix "fullwidth" ~/projects/fullwidth {})
