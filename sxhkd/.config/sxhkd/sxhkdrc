@@ -19,6 +19,12 @@ super + a
 
 super + w
   qutebrowser
+
+super + {_,shift + }space
+  rofi-pass {_,--insert}
+
+Print
+  spectacle
 #
 # bspwm hotkeys
 #
