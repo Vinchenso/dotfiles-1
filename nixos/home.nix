@@ -51,7 +51,6 @@
   };
   services.polybar = {
     enable = true;
-    package = pkgs.polybar.override { i3GapsSupport = true; };
     config = {
       colors = {
         fg = "#ff0000";
@@ -72,6 +71,7 @@
         bottom = true;
         fixed-center = true;
         border-size = 0;
+        wm-restack = "bspwm";
 
         width = "100%";
         height = 35;
@@ -81,7 +81,7 @@
         padding-right = 2;
         tray-position = "left";
 
-        modules-right = "battery i3";
+        modules-right = "battery bspwm";
         modules-center = "date";
         modules-left = "cpu memory";
         separator = "     ";
@@ -125,8 +125,8 @@
         animation-charging-framerate = 500;
       };
 
-      "module/i3" = {
-        type = "internal/i3";
+      "module/bspwm" = {
+        type = "internal/bspwm";
         format = "<label-mode> <label-state>";
         index-sort = true;
 
@@ -135,15 +135,26 @@
         label-focused-foreground = "\${colors.bg}";
         label-focused-background = "\${colors.green}";
 
-        label-unfocused = "%index%";
-        label-unfocused-padding = 1;
+        label-occupied = "%index%";
+        label-occupied-padding = 1;
 
         label-urgent = "%index%";
         label-urgent-background = "\${colors.red}";
         label-urgent-padding = 1;
 
-        label-visible = "%index%";
-        label-visible-padding = 1;
+        label-empty = "%index%";
+        label-empty-foreground = "#55";
+        label-empty-padding = 1;
+
+        # label-unfocused = "%index%";
+        # label-unfocused-padding = 1;
+
+        # label-urgent = "%index%";
+        # label-urgent-background = "\${colors.red}";
+        # label-urgent-padding = 1;
+
+        # label-visible = "%index%";
+        # label-visible-padding = 1;
       };
 
 
