@@ -31,6 +31,8 @@ alias l="light -S"
 
 alias k="exa -lh"
 
+alias chmox="chmod +x"
+
 SKIM_PATH="/usr/share/skim"
 
 # imperative, ew
