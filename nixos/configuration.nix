@@ -107,6 +107,7 @@
       hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
       hardware.bluetooth.enable = true;
+      hardware.bluetooth.powerOnBoot = false;
 
       # Enable the X11 windowing system.
       services.xserver.enable = true;
