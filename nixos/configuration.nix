@@ -82,6 +82,7 @@
       services.openssh.enable = true;
       services.openssh.passwordAuthentication = false;
       services.openssh.challengeResponseAuthentication = false;
+      services.openssh.startWhenNeeded = true;
 
       services.unbound.enable = true;
 
