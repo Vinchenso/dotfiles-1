@@ -127,21 +127,15 @@
         format = "<label-mode> <label-state>";
         index-sort = true;
 
-        label-focused = "%index%";
-        label-focused-padding = 1;
-        label-focused-foreground = "\${colors.bg}";
-        label-focused-background = "\${colors.green}";
+        label-focused = "[%index%]";
 
-        label-occupied = "%index%";
-        label-occupied-padding = 1;
+        label-occupied = " %index% ";
 
-        label-urgent = "%index%";
+        label-urgent = " %index% ";
         label-urgent-background = "\${colors.red}";
-        label-urgent-padding = 1;
 
-        label-empty = "%index%";
+        label-empty = " %index% ";
         label-empty-foreground = "#55";
-        label-empty-padding = 1;
 
         # label-unfocused = "%index%";
         # label-unfocused-padding = 1;
