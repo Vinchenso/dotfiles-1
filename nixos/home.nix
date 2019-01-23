@@ -7,7 +7,7 @@
     nmap binutils units ffmpeg
 
     #haskell
-    cabal-install cabal2nix haskellPackages.styx ghc
+    cabal-install cabal2nix haskellPackages.styx ghc hlint
     (pkgs.haskellPackages.callCabal2nix "fullwidth" ~/projects/fullwidth {})
     (pkgs.haskellPackages.callCabal2nix "polishnt" ~/projects/polishnt {})
   ];
