@@ -127,14 +127,14 @@
         format = "<label-mode> <label-state>";
         index-sort = true;
 
-        label-focused = "[%index%]";
+        label-focused = "[%name%]";
 
-        label-occupied = " %index% ";
+        label-occupied = " %name% ";
 
-        label-urgent = " %index% ";
+        label-urgent = " %name% ";
         label-urgent-background = "\${colors.red}";
 
-        label-empty = " %index% ";
+        label-empty = " %name% ";
         label-empty-foreground = "#55";
 
         # label-unfocused = "%index%";
