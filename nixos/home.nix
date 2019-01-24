@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     htop qutebrowser termite networkmanagerapplet dunst libnotify mpv pass
     rofi-pass discord gimp tldr bat pavucontrol spectacle xclip gibo spotify
-    nmap binutils units ffmpeg
+    nmap binutils units ffmpeg tetex
 
     #haskell
     cabal-install cabal2nix haskellPackages.styx ghc hlint
@@ -13,10 +13,6 @@
   ];
 
   programs = {
-    firefox = {
-      enable = true;
-    };
-
     emacs.enable = true;
 
     git = {
