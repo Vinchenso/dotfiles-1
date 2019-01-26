@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+
+# Author: kleisli/wedens
+# License: WTFPL
+
+set -eo pipefail
+
+screenshots_dir="$HOME"/screenshots/
+
+temp_dir=$(mktemp -d -t screenshots.XXXXXX) || exit 1
+trap 'rm -rf "$temp_dir"' EXIT
+image_name="Screenshot_at_$(date +%Y-%m-%d-%H-%M-%S).png"
+image_full_path="$temp_dir"/"$image_name"
+
+save() {
+  mkdir -p "$screenshots_dir"
+  cp "$image_full_path" "$screenshots_dir"
+  echo "Image saved: $screenshots_dir/$image_name"
+  notify-send -u normal "Image saved: $image_name"
+}
+
+copy() {
+  if hash xclip 2>/dev/null; then
+    xclip -t image/png -selection clipboard -i "$image_full_path"
+    echo "Image copied to clipboard"
+    notify-send -u normal "Image copied to clipboard"
+  else
+    notify-send -u normal "xclip is not installed"
+    echo "xclip is not installed" >&2
+  fi
+}
+
+edit() {
+  if hash gimp 2>/dev/null; then
+    gimp "$image_full_path"
+  else
+    notify-send -u normal "gimp is not installed"
+    echo "gimp is not installed" >&2
+  fi
+}
+
+view() {
+  xdg-open "$image_full_path"
+}
+
+imgur_upload() {
+  if hash imgur.sh 2>/dev/null; then
+    url=$(imgur.sh "$image_full_path" | head -1)
+    if [ $? -eq 0 ]; then
+      echo "Image uploaded $url"
+      notify-send -u normal "Image uploaded" "$url"
+      echo "$url" | xclip -selection clipboard -in 
+    else
+      notify-send -u normal "Failed to upload to imgur"
+      echo "Failed to upload to imgur" >&2
+      exit 1
+    fi
+  else
+    notify-send -u normal "imgur.sh is not installed"
+    echo "imgur.sh is not installed" >&2
+  fi
+}
+
+# retake() {
+#   rm "$image_full_path"
+#   image_name="Screenshot_at_$(date +%Y-%m-%d-%H-%M-%S).png"
+#   image_full_path="$temp_dir"/"$image_name"
+# }
+
+show_actions_menu() {
+  choice=$(echo -e "Exit\nCopy\nImgur\nSave\nEdit\nView" | rofi -dmenu -i -p "Action")
+
+  if [ "$choice" = "Exit" ] ; then
+    exit 0
+  elif [ "$choice" = "Copy" ]; then
+    copy
+    show_actions_menu
+  elif [ "$choice" = "Save" ]; then
+    save
+    show_actions_menu
+  elif [ "$choice" = "Edit" ]; then
+    edit
+    show_actions_menu
+  elif [ "$choice" = "View" ]; then
+    view
+    show_actions_menu
+  elif [ "$choice" = "Imgur" ]; then
+    imgur_upload
+  else
+    exit 0
+  fi
+}
+
+take_screenshot_menu() {
+  choice=$(echo -e "Selection\nActive window\nFullscreen" | rofi -i -dmenu -p "What")
+  if [ "$choice" = "Selection" ]; then
+    rofi_cmd="maim -s $image_full_path"
+  elif [ "$choice" = "Active window" ]; then
+    # without sleep it won't capture active window correctly
+    rofi_cmd="maim -d 2 -i $(xdotool getactivewindow) $image_full_path"
+  elif [ "$choice" = "Fullscreen" ]; then
+    rofi_cmd="maim $image_full_path"
+  else
+    exit 0;
+  fi
+
+  if eval "$rofi_cmd"; then
+    show_actions_menu
+  else
+    notify-send -u normal "Failed to take screenshot"
+    echo "Failed to take screenshot" >&2
+  fi
+}
+
+take_screenshot_menu

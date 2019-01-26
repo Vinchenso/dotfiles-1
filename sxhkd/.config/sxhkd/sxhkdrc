@@ -24,7 +24,7 @@ super + {_,shift + }space
   rofi-pass {_,--insert}
 
 Print
-  spectacle
+  zsh -c rofi-ss
 #
 # bspwm hotkeys
 #
