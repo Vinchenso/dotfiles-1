@@ -49,3 +49,7 @@ alias ag="echo use rg"
 fw() {
   fullwidth "$@" | pbcopy
 }
+
+alias pbeof="pb << 'EOF'"
+
+alias rg="rg -P"
