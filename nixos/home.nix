@@ -4,9 +4,12 @@
   home.packages = with pkgs; [
     htop qutebrowser termite networkmanagerapplet dunst libnotify mpv pass
     rofi-pass discord gimp tldr bat pavucontrol spectacle xclip gibo spotify
-    nmap binutils units ffmpeg tetex
+    nmap binutils units ffmpeg tetex obs-studio okular
 
-    #haskell
+    # idris
+    idris
+
+    # haskell
     cabal-install cabal2nix haskellPackages.styx ghc hlint
     (pkgs.haskellPackages.callCabal2nix "fullwidth" ~/projects/fullwidth {})
     (pkgs.haskellPackages.callCabal2nix "polishnt" ~/projects/polishnt {})
