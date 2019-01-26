@@ -89,6 +89,7 @@
        ledger
        lua
        markdown
+       idris
        nix
        ocaml
        (org
@@ -127,6 +128,7 @@
        ;; lispyville
        parinfer
        rotate-text
+       (format +onsave)
 
        :completion
        ;; (lsp

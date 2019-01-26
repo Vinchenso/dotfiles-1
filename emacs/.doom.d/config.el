@@ -71,6 +71,17 @@
      "n" (lambda! (find-file "~/dotfiles/nixos/configuration.nix"))
      "N" (lambda! (find-file "~/dotfiles/nixos/home.nix")))
 
+;; damn home-manager making it cabal not show up in --pure!
+(after! dante
+  (setq dante-methods-alist (delq (assoc 'nix dante-methods-alist) dante-methods-alist))
+
+  (map! :map dante-mode-map
+        :localleader
+        "g" #'hoogle))
+
+(after! idris-mode
+  (setq idris-show-help-text nil))
+
 (after! helm
   ;; I want backspace to go up a level, like ivy
   (add-hook! 'helm-find-files-after-init-hook
