@@ -15,7 +15,7 @@ super + shift + r
 	pkill -USR1 -x sxhkd
 
 super + a
-	emacs
+	zsh -c emacs
 
 super + w
   qutebrowser
@@ -92,8 +92,8 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-5,0}
+	bspc {desktop -f,node -d} '^{1-6}'
 
 #
 # preselect
