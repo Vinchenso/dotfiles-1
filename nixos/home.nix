@@ -11,6 +11,7 @@
 
     # haskell
     cabal-install cabal2nix haskellPackages.styx ghc hlint
+    haskellPackages.hindent
     (pkgs.haskellPackages.callCabal2nix "fullwidth" ~/projects/fullwidth {})
     (pkgs.haskellPackages.callCabal2nix "polishnt" ~/projects/polishnt {})
   ];
