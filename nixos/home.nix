@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     htop qutebrowser termite networkmanagerapplet dunst libnotify mpv pass
     rofi-pass discord gimp tldr bat pavucontrol xclip gibo spotify nmap binutils
-    units ffmpeg tetex obs-studio okular maim
+    units ffmpeg tetex obs-studio okular maim xdotool xsel libxml2
 
     # idris
     idris

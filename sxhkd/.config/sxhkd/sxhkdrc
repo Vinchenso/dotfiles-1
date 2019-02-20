@@ -20,6 +20,9 @@ super + a
 super + w
   qutebrowser
 
+super + e
+  zsh -c rofimoji
+
 super + {_,shift + }space
   rofi-pass {_,--insert}
 
