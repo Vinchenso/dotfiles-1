@@ -128,7 +128,7 @@
        ;; lispyville
        parinfer
        rotate-text
-       (format +onsave)
+       ;; (format +onsave)
 
        :completion
        ;; (lsp
