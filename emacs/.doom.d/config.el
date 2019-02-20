@@ -75,6 +75,9 @@
 (after! dante
   (setq dante-methods-alist (delq (assoc 'nix dante-methods-alist) dante-methods-alist))
 
+  (setq ws-butler-global-exempt-modes
+        (append ws-butler-global-exempt-modes '(hindent-mode)))
+
   (map! :map dante-mode-map
         :localleader
         "g" #'hoogle))
