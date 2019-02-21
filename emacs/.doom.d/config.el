@@ -73,14 +73,16 @@
 
 ;; damn home-manager making it cabal not show up in --pure!
 (after! dante
+  ;; I use `nix-impure' instead of nix. I think this is because --pure won't
+  ;; include home-manager stuff but that's how i install most of my packages
   (setq dante-methods-alist (delq (assoc 'nix dante-methods-alist) dante-methods-alist))
+  ;; When I finish typing, dante saves the buffer and doesn't trigger
+  ;; before-save-hook. This means hindent never formats my buffer. I turn off
+  ;; idle flychecking so it only saves the buffer once i save the buffer!
+  (setq-hook! 'dante-mode-hook flycheck-check-syntax-automatically '(save mode-enabled))
 
   (setq ws-butler-global-exempt-modes
-        (append ws-butler-global-exempt-modes '(hindent-mode)))
-
-  (map! :map dante-mode-map
-        :localleader
-        "g" #'hoogle))
+        (append ws-butler-global-exempt-modes '(hindent-mode))))
 
 (after! idris-mode
   (setq idris-show-help-text nil))
