@@ -15,7 +15,7 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       wget vim git (ripgrep.override {withPCRE2 = true;}) fd stow exa nix-index
-      gnupg skim atool file tmux pv
+      gnupg fzf atool file tmux pv binutils
     ];
 
 
@@ -54,7 +54,7 @@
     programs.light.enable = true;
     programs.mosh.enable = true;
 
-    networking.hostName = "Rhenium"; # Define your hostname.
+    networking.hostName = "rhenium"; # Define your hostname.
     networking.networkmanager.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
@@ -85,6 +85,9 @@
       services.openssh.passwordAuthentication = false;
       services.openssh.challengeResponseAuthentication = false;
       services.openssh.startWhenNeeded = true;
+
+      services.xserver.autoRepeatDelay = 200;
+      services.xserver.autoRepeatInterval = 25;
 
       services.unbound.enable = true;
 
