@@ -33,15 +33,15 @@ alias k="exa -lh"
 
 alias chmox="chmod +x"
 
-SKIM_PATH="/usr/share/skim"
+FZF_PATH="/usr/share/fzf"
 
 # imperative, ew
-if command -v sk-share > /dev/null; then
-  SKIM_PATH=$(sk-share)
+if command -v fzf-share > /dev/null; then
+  FZF_PATH=$(fzf-share)
 fi
 
-. "$SKIM_PATH/key-bindings.zsh"
-. "$SKIM_PATH/completion.zsh"
+. "$FZF_PATH/key-bindings.zsh"
+. "$FZF_PATH/completion.zsh"
 
 
 alias ag="echo use rg"
@@ -53,3 +53,5 @@ fw() {
 alias pbeof="pb << 'EOF'"
 
 alias rg="rg -P"
+
+export NIX_AUTO_RUN=1
