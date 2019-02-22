@@ -76,11 +76,12 @@
   ;; I use `nix-impure' instead of nix. I think this is because --pure won't
   ;; include home-manager stuff but that's how i install most of my packages
   (setq dante-methods-alist (delq (assoc 'nix dante-methods-alist) dante-methods-alist))
-  ;; When I finish typing, dante saves the buffer and doesn't trigger
-  ;; before-save-hook. This means hindent never formats my buffer. I turn off
-  ;; idle flychecking so it only saves the buffer once i save the buffer!
-  (setq-hook! 'dante-mode-hook flycheck-check-syntax-automatically '(save mode-enabled))
-
+  (defun +haskell*restore-modified-state (orig-fn &rest args)
+    (let ((modified-p (buffer-modified-p)))
+      (apply orig-fn args)
+      (when modified-p
+        (set-buffer-modified-p t))))
+  (advice-add #'dante-async-load-current-buffer :around #'+haskell*restore-modified-state)
   (setq ws-butler-global-exempt-modes
         (append ws-butler-global-exempt-modes '(hindent-mode))))
 
