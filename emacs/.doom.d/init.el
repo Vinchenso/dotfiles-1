@@ -15,7 +15,6 @@
 
        :emacs
        dired
-       ediff
        electric
        eshell
        imenu
