@@ -18,6 +18,8 @@
       gnupg fzf atool file tmux pv binutils
     ];
 
+    nix.trustedUsers = [ "root" "aria" ];
+
 
 
     fonts.fonts = with pkgs; [
