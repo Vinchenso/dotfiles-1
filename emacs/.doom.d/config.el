@@ -71,6 +71,24 @@
      "n" (lambda! (find-file "~/dotfiles/nixos/configuration.nix"))
      "N" (lambda! (find-file "~/dotfiles/nixos/home.nix")))
 
+(setq lsp-haskell-process-wrapper-function
+  (lambda (argv)
+    (append
+      (append (list "nix-shell" "-I" "." "--command")
+              (list (mapconcat 'identity argv " ")))
+
+      (list (concat (lsp-haskell--get-root) "/shell.nix")))))
+
+;; Possibly useless
+(setq haskell-process-wrapper-function
+      (lambda (argv) (append (list "nix-shell" "-I" "." "--command")
+                             (list (mapconcat 'identity argv " ")))))
+
+
+(after! lsp-haskell
+  ;; These take up a lot of space on my big font size
+  (setq lsp-ui-sideline-show-code-actions nil))
+
 ;; damn home-manager making it cabal not show up in --pure!
 (after! dante
   ;; I use `nix-impure' instead of nix. I think this is because --pure won't

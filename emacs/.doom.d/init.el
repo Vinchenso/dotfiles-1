@@ -9,8 +9,7 @@
         +devdocs)
        ;; +docsets)
        snippets
-       spellcheck
-       syntax-checker ;;+childframe)
+       ;; syntax-checker ;;+childframe)
        workspaces
 
        :emacs
@@ -54,6 +53,7 @@
        (pretty-code +fira)
 
        :tools
+       lsp
        gist
                                         ;;macos
        make
@@ -65,6 +65,7 @@
        tmux
        upload
        editorconfig
+       flycheck
        ;; wakatime
 
        :lang
@@ -79,7 +80,7 @@
        emacs-lisp
        ;ess
        go
-       (haskell +dante)
+       (haskell +lsp)
        hy
                                         ;;(java +meghanada)
        javascript
@@ -127,6 +128,7 @@
        ;; lispyville
        parinfer
        rotate-text
+       fold
        ;; (format +onsave)
 
        :completion

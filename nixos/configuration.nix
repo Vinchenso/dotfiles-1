@@ -107,6 +107,15 @@
       # networking.firewall.enable = false;
       networking.extraHosts = builtins.readFile (builtins.fetchurl { name = "blocked_hosts.txt"; url = "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext"; });
 
+      environment.etc.current-nixos-config.source = ./.;
+
+      services.locate = {
+        enable = true;
+        locate = pkgs.mlocate;
+        interval = "hourly";
+      };
+
+
 
       # Enable CUPS to print documents.
       # services.printing.enable = true;
@@ -123,7 +132,7 @@
       services.xserver.enable = true;
       services.xserver.layout = "us";
       services.xserver.windowManager.bspwm.enable = true;
-      # services.xserver.xkbOptions = "eurosign:e";
+      services.xserver.xkbOptions = "compose:ralt";
       services.compton.enable = true;
 
       # Enable touchpad support.
@@ -153,7 +162,7 @@
         isNormalUser = true;
         uid = 1000;
         shell = pkgs.zsh;
-        extraGroups = [ "wheel" "networkmanager" "video" ];
+        extraGroups = [ "wheel" "networkmanager" "video" "mlocate" ];
       };
 
       nixpkgs.config.allowUnfree = true;
