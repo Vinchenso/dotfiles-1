@@ -3,6 +3,10 @@
 sxhkd &
 nm-applet &
 
+if command -v barrier > /dev/null; then
+    barrier &
+fi
+
 bspc monitor -d term web chat code other persistent
 
 bspc config border_width         2
