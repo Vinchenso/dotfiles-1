@@ -135,6 +135,21 @@
   services.xserver.layout = "us";
   services.xserver.windowManager.bspwm.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Disable mouse acceleration
+  services.xserver.libinput.enable = true;
+  # services.xserver.libinput.accelProfile = "flat"; # Only affects touchpads
+  services.xserver.config = ''
+    Section "InputClass"
+      Identifier "mouse accel"
+      Driver "libinput"
+      MatchIsPointer "on"
+      Option "AccelProfile" "flat"
+      Option "AccelSpeed" "0"
+    EndSection
+  '';
+
+
   services.compton.enable = true;
   services.compton.backend = "glx";
   services.compton.vSync = "opengl-swc";
@@ -170,9 +185,6 @@
       LoadPlugin users
     '';
   };
-
-  # Enable touchpad support.
-  # services.xserver.libinput.enable = true;
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
