@@ -9,6 +9,7 @@
     [
     /etc/nixos/hardware-configuration.nix
     ./system.nix
+    ./collectd.nix
     ];
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
