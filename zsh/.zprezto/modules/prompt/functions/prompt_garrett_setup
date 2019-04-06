@@ -178,7 +178,7 @@ function prompt_garrett_precmd {
   prompt_garrett_pwd="${prompt_garrett_color_pwd}$(prompt-pwd)"
 
   # Trigger a notification after x time has elapsed.
-  eval prompt_garrett_precmd_notification
+  # eval prompt_garrett_precmd_notification
 
   # Get Ruby info.
   if (( $+functions[ruby-info] )); then
@@ -342,7 +342,8 @@ function prompt_garrett_setup {
   # Report terminal line number.
   #
 
-  eval prompt_garrett_line_number='${green}+${magenta}%!'
+  # eval prompt_garrett_line_number='${green}+${magenta}%!'
+  eval prompt_garrett_line_number=''
 
   #
   # Report git info.
@@ -442,7 +443,8 @@ function prompt_garrett_setup {
   #
 
   # Left prompt; base shell level.
-  if (( $SHLVL == 1 )); then
+  # by default, 1. but on nixos it's 3 ?????
+  if (( $SHLVL == 3 )); then
     export PROMPT='${prompt_garrett_altchar_enable}${prompt_garrett_color_prompt}${prompt_garrett_lower_left_corner}${editor_info[keymap]}'
 
   # Left prompt; nested shell level.
