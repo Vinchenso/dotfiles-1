@@ -41,6 +41,8 @@
   services.avahi.publish.enable = true;
 
   services.compton.enable = true;
+  services.compton.backend = "glx";
+  services.compton.vSync = "opengl-swc";
 
   services.locate = {
     enable = true;
