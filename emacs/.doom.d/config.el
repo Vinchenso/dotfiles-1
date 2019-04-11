@@ -68,8 +68,8 @@
 
 (map! :leader
      :prefix "f"
-     "n" (lambda! (find-file "~/dotfiles/nixos/configuration.nix"))
-     "N" (lambda! (find-file "~/dotfiles/nixos/home.nix")))
+     "n" (lambda! (find-file "~/dotfiles/nixos/home.nix"))
+     "N" (lambda! (find-file (concat "~/dotfiles/nixos/" (system-name) ".nix"))))
 
 (setq lsp-haskell-process-wrapper-function
   (lambda (argv)
