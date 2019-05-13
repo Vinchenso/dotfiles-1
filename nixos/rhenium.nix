@@ -15,6 +15,15 @@
   networking.hostId = "80fd9d3a";
 
   boot.zfs.enableUnstable = true;
+  services.zfs.autoScrub.enable = true;
+  services.znapzend.enable = true;
+  services.znapzend.zetup = {
+    "tank/home" = {
+      plan = "1d=>1h,1m=>1d,1y=>1m";
+      recursive = true;
+    };
+  };
+
   boot.initrd.luks.devices = [
     {
       name = "root";
