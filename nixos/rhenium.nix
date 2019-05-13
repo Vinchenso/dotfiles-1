@@ -12,13 +12,13 @@
     ./collectd.nix
     ];
 
-  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
+  networking.hostId = "80fd9d3a";
 
+  boot.zfs.enableUnstable = true;
   boot.initrd.luks.devices = [
     {
       name = "root";
-      device = "/dev/disk/by-uuid/29f7dde5-7594-4783-938b-8a01294c687c";
-      preLVM = true;
+      device = "/dev/disk/by-uuid/e5f879ff-cc1e-448f-a5c6-73327b7631a3";
       allowDiscards = true;
     }
   ];
