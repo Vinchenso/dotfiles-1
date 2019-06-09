@@ -18,7 +18,7 @@ super + a
 	zsh -c emacs
 
 super + w
-  qutebrowser
+  firefox
 
 super + e
   zsh -c rofimoji
