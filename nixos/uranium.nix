@@ -15,6 +15,7 @@
 
   environment.systemPackages = with pkgs; [
     btrfs-progs pciutils gnome3.dconf # for virt-manager
+    docker-compose
   ];
 
 
@@ -65,8 +66,10 @@
     EndSection
   '';
 
+  virtualisation.docker.enable = true;
 
-  users.users.aria.extraGroups = ["libvirtd" "adbusers"];
+
+  users.users.aria.extraGroups = ["libvirtd" "adbusers" "docker"];
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
