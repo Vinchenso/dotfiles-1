@@ -42,6 +42,7 @@
    (ui7 '("#536991" nil nil))
    (ui8 '("#606580" nil nil))
    (ui9 '("#3a3d4d" nil nil))
+   (internalborder '("#1c1e27" nil nil))
    ;; 10 skipped for some reason
    (ui11 '("#282a36" nil nil))
    (ui12 '("#192224" nil nil))
@@ -102,6 +103,8 @@
    (line-number-current-line :foreground fg)
    ;; rjsx stuff
    (rjsx-text :foreground fg)
+
+   (ivy-posframe-border :background internalborder)
 
    ;; org
    (org-level-1 :foreground blue :background ui9 :height 1.25 :weight 'bold)
