@@ -2,34 +2,28 @@
 
 (doom! :feature
                                         ;;debugger
-       eval
-       (evil +everywhere)
-       file-templates
-       (lookup
-        +devdocs)
        ;; +docsets)
-       snippets
        ;; syntax-checker ;;+childframe)
-       workspaces
 
        :emacs
        dired
        electric
-       eshell
-       imenu
-       term
        vc
+
+       :term
+       term
 
        :completion
        (company
         +auto)
 
                                         ;;the ultimate code completion backend
-       (helm +fuzzy)                    ;;+childframe)
+       ;; (helm +fuzzy)                    ;;+childframe)
                                         ;;ido
-       ;; (ivy
-       ;;  +childframe
-       ;;  +fuzzy)
+       (ivy
+        +childframe
+        +fuzzy
+        +prescient)
 
 
        :ui
@@ -37,8 +31,9 @@
        doom-dashboard
        modeline
        doom-quit
-       evil-goggles
+       ophints
        hl-todo
+       workspaces
        nav-flash
                                         ;;tabbar
        vc-gutter
@@ -53,12 +48,15 @@
        (pretty-code +fira)
 
        :tools
+       eval
+       (lookup
+        +devdocs)
        lsp
        gist
                                         ;;macos
        make
        magit                            ;;
-       password-store
+       pass
        pdf
        prodigy
                                         ;;rgb
@@ -83,7 +81,7 @@
        (haskell +lsp)
        hy
                                         ;;(java +meghanada)
-       javascript
+       (javascript +lsp)
        julia
        latex
        ledger
@@ -125,6 +123,9 @@
         +langtool)
 
        :editor
+       (evil +everywhere)
+       file-templates
+       snippets
        ;; lispyville
        parinfer
        rotate-text
@@ -142,6 +143,10 @@
        ;;  +java
        ;;  +python
        ;;  +sh)
+
+       :term
+
+       eshell
 
        :config
        ;; The default module set reasonable defaults for Emacs. It also provides
