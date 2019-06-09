@@ -8,8 +8,8 @@
 (package! rubocop)
 
 ;; Misc stuff
-;; Can highlight a region and hit M-x carbon-now-sh to get a https://carbon.now
-;; of the region
+;; Can highlight a region and hit M-x carbon-now-sh to get a
+;; https://carbon.now.sh of the region
 (package! carbon-now-sh)
 
 ;; JS stuff
