@@ -6,6 +6,10 @@
     rofi-pass discord gimp tldr bat pavucontrol xclip gibo spotify nmap binutils
     units ffmpeg tetex okular maim xdotool xsel libxml2 gitAndTools.hub clang
     virtmanager barrier qbittorrent ranger weechat looking-glass-client pb_cli sshfs
+    nodejs yarn
+
+    # to install argon2
+    python gnumake
 
     # idris
     idris
@@ -21,6 +25,8 @@
 
   programs = {
     emacs.enable = true;
+
+    firefox.enable = true;
 
     git = {
       enable = true;
