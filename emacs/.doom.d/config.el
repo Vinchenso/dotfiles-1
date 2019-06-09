@@ -46,6 +46,8 @@
   ;; Indent shit
   (setq js2-basic-offset 2))
 
+(setq js-indent-level 2)
+
 
 (defun enable-minor-mode (my-pair)
   "Enable minor mode if filename matches the regexp.

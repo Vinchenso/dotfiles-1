@@ -18,6 +18,8 @@
   ];
 
 
+  programs.adb.enable = true;
+
   boot.initrd.luks.devices = [
     {
       name = "root";
@@ -30,7 +32,7 @@
   boot.initrd.kernelModules = [ "vfio" "vfio_pci" "vfio_virqfd" "vfio_iommu_type1" ];
   boot.kernelParams = [
     "amd_iommu=on" "iommu=pt" "vfio_pci.ids=10de:1f02,10de:10f9,10de:1ada,10de:1adb"
-    "default_hugepagesz=1G" "hugepagesz=1G" "hugepages=8"
+    # "default_hugepagesz=1G" "hugepagesz=1G" "hugepages=8"
     "kvm.ignore_msrs=1"
   ];
 
@@ -64,6 +66,7 @@
   '';
 
 
+  users.users.aria.extraGroups = ["libvirtd" "adbusers"];
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database

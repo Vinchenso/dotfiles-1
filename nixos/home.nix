@@ -16,7 +16,7 @@
     (pkgs.haskellPackages.callCabal2nix "fullwidth" ~/projects/fullwidth {})
     (pkgs.haskellPackages.callCabal2nix "polishnt" ~/projects/polishnt {})
 
-    (pkgs.callPackage ~/.ftb/nixderivation {})
+    #(pkgs.callPackage ~/.ftb/nixderivation {})
   ];
 
   programs = {
