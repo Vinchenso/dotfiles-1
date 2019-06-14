@@ -56,6 +56,10 @@
       (if (string-match (car my-pair) buffer-file-name)
           (funcall (cdr my-pair)))))
 
+(setq company-idle-delay nil) ;; TODO: remove this line once
+                              ;; +company/toggle-auto-completion has fixed its (unless)
+(+company/toggle-auto-completion)
+
 (after! web-mode
   (add-hook 'web-mode-hook #'flycheck-mode)
 
@@ -87,7 +91,7 @@
                              (list (mapconcat 'identity argv " ")))))
 
 
-(after! lsp-haskell
+(after! lsp
   ;; These take up a lot of space on my big font size
   (setq lsp-ui-sideline-show-code-actions nil))
 
