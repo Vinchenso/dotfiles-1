@@ -14,15 +14,14 @@
        term
 
        :completion
-       (company
-        +auto)
+       (company +childframe)
 
                                         ;;the ultimate code completion backend
        ;; (helm +fuzzy)                    ;;+childframe)
                                         ;;ido
        (ivy
         +childframe
-        +fuzzy
+        ;; +fuzzy
         +prescient)
 
 
