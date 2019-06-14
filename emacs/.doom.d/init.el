@@ -34,6 +34,7 @@
        hl-todo
        workspaces
        nav-flash
+       indent-guides
                                         ;;tabbar
        vc-gutter
 
