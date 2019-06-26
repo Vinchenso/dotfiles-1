@@ -194,7 +194,7 @@
         type = "internal/memory";
         interval = 2;
 
-        label = " %gb_used%/%gb_total%";
+        label = "%gb_used%/%gb_total%";
         label-foreground = "\${colors.yellow}";
       };
     };
