@@ -14,7 +14,7 @@
 
   fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
   fonts.fonts = with pkgs; [
-    fira-code-symbols noto-fonts symbola noto-fonts-cjk font-awesome_5
+    fira-code-symbols noto-fonts symbola noto-fonts-cjk font-awesome_5 jost
   ];
 
   hardware.pulseaudio.enable = true;
