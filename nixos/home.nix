@@ -27,6 +27,7 @@
     emacs.enable = true;
 
     firefox.enable = true;
+    chromium.enable = true;
 
     git = {
       enable = true;
