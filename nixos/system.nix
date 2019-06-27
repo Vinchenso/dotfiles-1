@@ -20,7 +20,8 @@
   hardware.pulseaudio.enable = true;
 
   networking.extraHosts = builtins.readFile (builtins.fetchurl { name = "blocked_hosts.txt"; url = "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext"; });
-  networking.networkmanager.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;
+  networking.search = [ "home.daz.cat" "daz.cat" ];
 
   nix.trustedUsers = [ "root" "aria" ];
 
