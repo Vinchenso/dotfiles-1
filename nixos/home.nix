@@ -6,7 +6,7 @@
     rofi-pass discord gimp tldr bat pavucontrol xclip gibo spotify nmap binutils
     units ffmpeg tetex okular maim xdotool xsel libxml2 gitAndTools.hub clang
     virtmanager barrier qbittorrent ranger weechat looking-glass-client pb_cli sshfs
-    nodejs yarn
+    nodejs-10_x yarn direnv
 
     # to install argon2
     python gnumake

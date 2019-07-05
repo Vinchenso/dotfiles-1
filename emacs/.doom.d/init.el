@@ -64,6 +64,7 @@
        upload
        editorconfig
        (flycheck +childframe)
+       direnv
        ;; wakatime
 
        :lang
