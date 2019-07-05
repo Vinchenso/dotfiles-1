@@ -41,13 +41,21 @@
 
 (after! js2-mode
   ;; use eslintd-fix so when i save it fixes dumb shit
-  (add-hook 'js2-mode-hook #'eslintd-fix-mode)
+  ;; (add-hook 'js2-mode-hook #'eslintd-fix-mode)
 
   ;; Indent shit
   (setq js2-basic-offset 2))
 
 (setq js-indent-level 2)
 
+(setq +set-eslint-checker nil)
+(after! lsp-ui
+  ;; for whatever reason, this was running twice.
+  (when (not +set-eslint-checker)
+    (progn
+      (setq +set-eslint-checker t)
+      (flycheck-add-mode 'javascript-eslint 'web-mode)
+      (flycheck-add-next-checker 'lsp-ui '(warning . javascript-eslint)))))
 
 (defun enable-minor-mode (my-pair)
   "Enable minor mode if filename matches the regexp.
@@ -93,7 +101,9 @@
 
 (after! lsp
   ;; These take up a lot of space on my big font size
-  (setq lsp-ui-sideline-show-code-actions nil))
+  (setq lsp-ui-sideline-show-code-actions nil
+        lsp-ui-sideline-show-diagnostics nil
+        lsp-signature-render-all nil))
 
 ;; damn home-manager making it cabal not show up in --pure!
 (after! dante
