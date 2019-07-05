@@ -113,6 +113,10 @@
         lsp-ui-sideline-show-diagnostics nil
         lsp-signature-render-all nil))
 
+(after! web-mode
+  (remove-hook 'web-mode-hook #'+javascript|init-lsp-or-tide-maybe)
+  (add-hook 'web-mode-local-vars-hook #'+javascript|init-lsp-or-tide-maybe))
+
 ;; damn home-manager making it cabal not show up in --pure!
 (after! dante
   ;; I use `nix-impure' instead of nix. I think this is because --pure won't
