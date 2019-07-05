@@ -131,6 +131,7 @@
        parinfer
        rotate-text
        fold
+       multiple-cursors
        ;; (format +onsave)
 
        :completion
