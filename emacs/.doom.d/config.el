@@ -57,6 +57,14 @@
       (flycheck-add-mode 'javascript-eslint 'web-mode)
       (flycheck-add-next-checker 'lsp-ui '(warning . javascript-eslint)))))
 
+(after! emmet-mode
+  ;; this is already done in emmet :config but it doesn't seem to get set on my
+  ;; machine, so let's do it again
+  (map! :map emmet-mode-keymap
+        :v [tab] #'emmet-wrap-with-markup
+        :i [tab] #'+web/indent-or-yas-or-emmet-expand
+        :i "M-E" #'emmet-expand-line))
+
 (defun enable-minor-mode (my-pair)
   "Enable minor mode if filename matches the regexp.
   MY-PAIR is a cons cell (regexp . minor-mode)."
