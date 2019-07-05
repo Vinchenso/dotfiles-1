@@ -16,6 +16,13 @@
   fonts.fonts = with pkgs; [
     fira-code-symbols noto-fonts symbola noto-fonts-cjk font-awesome_5 jost
   ];
+  fonts.fontconfig.localConf = ''
+    <alias>
+      <family>Jost</family>
+      <prefer><family>Jost*</family></prefer>
+      <default><family>fixed</family></default>
+    </alias>
+  '';
 
   hardware.pulseaudio.enable = true;
 
