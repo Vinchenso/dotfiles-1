@@ -63,7 +63,7 @@
        tmux
        upload
        editorconfig
-       flycheck
+       (flycheck +childframe)
        ;; wakatime
 
        :lang
