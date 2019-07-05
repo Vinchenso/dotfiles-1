@@ -72,9 +72,8 @@
       (if (string-match (car my-pair) buffer-file-name)
           (funcall (cdr my-pair)))))
 
-(setq company-idle-delay nil) ;; TODO: remove this line once
-                              ;; +company/toggle-auto-completion has fixed its (unless)
-(+company/toggle-auto-completion)
+(setq company-idle-delay 0.1) ;; quick company pls!
+
 
 (after! web-mode
   (add-hook 'web-mode-hook #'flycheck-mode)
