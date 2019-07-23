@@ -72,7 +72,8 @@
       (if (string-match (car my-pair) buffer-file-name)
           (funcall (cdr my-pair)))))
 
-(setq company-idle-delay 0.1) ;; quick company pls!
+(setq company-idle-delay 0.1
+      company-lsp-cache-candidates 'auto) ;; quick company pls!
 
 
 (after! web-mode
