@@ -14,6 +14,9 @@
     # idris
     idris
 
+    #firefox
+    firefox-devedition-bin
+
     # haskell
     cabal-install cabal2nix haskellPackages.styx ghc hlint
     haskellPackages.hindent
@@ -26,7 +29,8 @@
   programs = {
     emacs.enable = true;
 
-    firefox.enable = true;
+    # firefox.enable = true;
+    # firefox.package = pkgs.firefox-devedition-bin-unwrapped;
     chromium.enable = true;
 
     git = {
