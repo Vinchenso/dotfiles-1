@@ -1,8 +1,5 @@
 ;;; ~/.doom.d/+magit.el -*- lexical-binding: t; -*-
 
-(setq +magit-hub-features t ;; I want the PR/issue stuff too!
-      +magit-hub-enable-by-default t)  ;; And I want it on by default!
-
 (after! magit
   (magit-wip-after-save-mode t)
   (magit-wip-after-apply-mode t)
