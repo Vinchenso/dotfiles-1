@@ -150,7 +150,6 @@
                    ;; Modules
 (load! "+ruby")    ;; Custom ruby mode. Make sure you disable ruby in init.el
 (load! "+ui")      ;; My ui mods. Also contains ligature stuff.
-(load! "+music")   ;; Music stuff, visible through SPC-a-m. Not perfect.
 (load! "+ranger")  ;; File manager stuff
 (load! "+reason")  ;; ReasonML stuff
 (load! "+mail")    ;; Mail stuff
