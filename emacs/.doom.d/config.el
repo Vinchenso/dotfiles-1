@@ -51,6 +51,7 @@
 (setq +set-eslint-checker nil)
 (after! lsp-ui
   ;; for whatever reason, this was running twice.
+  (setq lsp-ui-sideline-show-hover t)
   (when (not +set-eslint-checker)
     (progn
       (setq +set-eslint-checker t)
