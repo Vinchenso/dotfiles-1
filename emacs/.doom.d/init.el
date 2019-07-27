@@ -132,7 +132,7 @@
        rotate-text
        fold
        multiple-cursors
-       ;; (format +onsave)
+       (format +onsave)
 
        :completion
        ;; (lsp
