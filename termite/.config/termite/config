@@ -1,6 +1,5 @@
 [options]
-# font = monospace 25
-font = Iosevka 25
+font = monospace 25
 cursor_shape = ibeam
 
 [colors]

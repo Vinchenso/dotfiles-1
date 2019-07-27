@@ -12,9 +12,10 @@
     gnupg fzf atool file tmux pv binutils
   ];
 
-  fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
+  fonts.fontconfig.defaultFonts.monospace = [ "Source Code Pro" ];
   fonts.fonts = with pkgs; [
     fira-code-symbols noto-fonts symbola noto-fonts-cjk font-awesome_5 jost
+    source-code-pro
   ];
   fonts.fontconfig.localConf = ''
     <alias>
