@@ -26,6 +26,10 @@
     #(pkgs.callPackage ~/.ftb/nixderivation {})
   ];
 
+  home.sessionVariables = {
+    MOZ_USE_XINPUT2 = 1;
+  };
+
   programs = {
     emacs.enable = true;
 
