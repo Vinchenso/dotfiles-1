@@ -79,7 +79,7 @@
        emacs-lisp
        ;ess
        go
-       (haskell +lsp)
+       (haskell +dante)
        hy
                                         ;;(java +meghanada)
        (javascript +lsp)

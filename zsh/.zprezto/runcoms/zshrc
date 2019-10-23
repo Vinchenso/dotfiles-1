@@ -55,3 +55,5 @@ alias pbeof="pb << 'EOF'"
 alias rg="rg -P"
 
 export NIX_AUTO_RUN=1
+
+eval "$(direnv hook zsh)"

@@ -19,7 +19,7 @@
 
     # haskell
     cabal-install cabal2nix haskellPackages.styx ghc hlint
-    haskellPackages.hindent
+    haskellPackages.hindent haskellPackages.brittany
     (pkgs.haskellPackages.callCabal2nix "fullwidth" ~/projects/fullwidth {})
     (pkgs.haskellPackages.callCabal2nix "polishnt" ~/projects/polishnt {})
 
@@ -37,10 +37,12 @@
       enable = true;
       userName = "Aria Edmonds";
       userEmail = "aria@ar1as.space";
-      extraConfig = ''
-      [github]
-      user = ar1a
-      '';
+      extraConfig = {
+        github = {
+          user = "ar1a";
+        };
+      };
+      ignores = [ ".direnv" ".envrc" ];
     };
 
     rofi = {

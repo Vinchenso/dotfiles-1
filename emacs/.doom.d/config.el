@@ -77,8 +77,8 @@
         lsp-signature-render-all nil))
 
 (after! web-mode
-  (remove-hook 'web-mode-hook #'+javascript|init-lsp-or-tide-maybe)
-  (add-hook 'web-mode-local-vars-hook #'+javascript|init-lsp-or-tide-maybe))
+  (remove-hook 'web-mode-hook #'+javascript-init-lsp-or-tide-maybe-h)
+  (add-hook 'web-mode-local-vars-hook #'+javascript-init-lsp-or-tide-maybe-h))
 
 ;; damn home-manager making it cabal not show up in --pure!
 (after! dante
