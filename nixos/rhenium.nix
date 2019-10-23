@@ -48,6 +48,12 @@
 
   services.redis.enable = true;
 
+  # hardware video decoding
+  hardware.opengl.enable = true;
+  hardware.opengl.extraPackages = with pkgs; [
+    intel-media-driver
+  ];
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you

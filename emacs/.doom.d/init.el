@@ -106,7 +106,7 @@
        rest
                                         ;;ruby
        rust
-       scala
+       ;; scala
        sh
        swift
        web
