@@ -14,7 +14,7 @@
     ];
 
   environment.systemPackages = with pkgs; [
-    btrfs-progs pciutils gnome3.dconf # for virt-manager
+    btrfs-progs gnome3.dconf # for virt-manager
     docker-compose
   ];
 

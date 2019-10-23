@@ -9,7 +9,7 @@
   environment.etc.current-nixos-config.source = ./.;
   environment.systemPackages = with pkgs; [
     wget vim git (ripgrep.override {withPCRE2 = true;}) fd stow exa nix-index
-    gnupg fzf atool file tmux pv binutils
+    gnupg fzf atool file tmux pv binutils pciutils
   ];
 
   fonts.fontconfig.defaultFonts.monospace = [ "Source Code Pro" ];
@@ -61,6 +61,7 @@
 
   services.openssh.enable = true;
   services.openssh.startWhenNeeded = true;
+  services.openssh.forwardX11 = true;
 
   services.syncthing = {
     enable = true;
