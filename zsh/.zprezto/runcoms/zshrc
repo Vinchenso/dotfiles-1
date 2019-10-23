@@ -56,4 +56,8 @@ alias rg="rg -P"
 
 export NIX_AUTO_RUN=1
 
+alias mount='mount | grep -v -E "cgmfs|tmpfs|udev|none|rpc_pipefs|binfmt|fusectl|nfsd|cgroup|tmpfs|pstore|mqueue|debugfs|hugetlbfs|cgmfs|gvfsd-fuse|securityfs|devpts|udev|sysfs|proc|vmware-vmblock" | column -t'
+
+alias fmr='findmnt --real'
+
 eval "$(direnv hook zsh)"
