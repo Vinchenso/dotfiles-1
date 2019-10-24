@@ -23,6 +23,7 @@ cd ~/.emacs.d
 make quickstart
 #+END_SRC
 And also, make sure to install the fonts in dotfiles/emacs/.doom.d/fonts.tar.gz
+**THESE WILL MAKE THE SAVE ICON LOOK LIKE A LIGATURE IN EMACS**
 *** +mail
 For my mail setup i have my offlineimap running (config included in repo), and
 also have a .msmtprc in my home directory. You can see how to configure that [[https://wiki.archlinux.org/index.php/Msmtp][Here]]
