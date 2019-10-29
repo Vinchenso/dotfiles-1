@@ -8,7 +8,7 @@
 
   environment.etc.current-nixos-config.source = ./.;
   environment.systemPackages = with pkgs; [
-    wget vim git (ripgrep.override {withPCRE2 = true;}) fd stow exa nix-index
+    wget vim git ripgrep fd stow exa nix-index
     gnupg fzf atool file tmux pv binutils pciutils
   ];
 
