@@ -6,7 +6,7 @@
     rofi-pass discord gimp tldr bat pavucontrol xclip gibo spotify nmap binutils
     units ffmpeg tetex okular maim xdotool xsel libxml2 gitAndTools.hub clang
     virtmanager barrier qbittorrent ranger weechat looking-glass-client pb_cli sshfs
-    nodejs-10_x yarn direnv html-tidy screenkey neofetch pwgen
+    nodejs-10_x yarn direnv html-tidy screenkey neofetch pwgen insomnia
 
     # to install argon2
     python gnumake
