@@ -49,6 +49,7 @@
       enable = true;
       userName = "Aria Edmonds";
       userEmail = "aria@ar1as.space";
+      lfs.enable = true;
       extraConfig = {
         github = {
           user = "ar1a";
