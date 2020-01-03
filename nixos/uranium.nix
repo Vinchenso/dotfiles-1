@@ -67,6 +67,7 @@
   '';
 
   virtualisation.docker.enable = true;
+  powerManagement.cpuFreqGovernor = "ondemand";
 
 
   users.users.aria.extraGroups = ["libvirtd" "adbusers" "docker"];
