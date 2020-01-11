@@ -55,6 +55,12 @@
     python
     gnumake
 
+    #eve online
+    (steam.override {
+      nativeOnly = true;
+      extraPkgs = pkgs: [ pkgs.openldap ];
+    }).run
+
     # idris
     idris
 
