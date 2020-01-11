@@ -2,15 +2,58 @@
 
 {
   home.packages = with pkgs; [
-    htop qutebrowser termite networkmanagerapplet dunst libnotify mpv pass
-    rofi-pass discord gimp tldr bat pavucontrol xclip gibo spotify nmap binutils
-    units ffmpeg tetex okular maim xdotool xsel libxml2 gitAndTools.hub clang
-    virtmanager barrier qbittorrent ranger weechat looking-glass-client pb_cli sshfs
-    nodejs-12_x direnv html-tidy screenkey neofetch pwgen exercism insomnia
-    emacsGit rink
+    htop
+    qutebrowser
+    termite
+    networkmanagerapplet
+    dunst
+    libnotify
+    mpv
+    pass
+    rofi-pass
+    discord
+    gimp
+    tldr
+    bat
+    pavucontrol
+    xclip
+    gibo
+    spotify
+    nmap
+    binutils
+    units
+    ffmpeg
+    tetex
+    okular
+    maim
+    xdotool
+    xsel
+    libxml2
+    gitAndTools.hub
+    clang
+    virtmanager
+    barrier
+    qbittorrent
+    ranger
+    weechat
+    looking-glass-client
+    pb_cli
+    sshfs
+    nodejs-12_x
+    direnv
+    html-tidy
+    screenkey
+    neofetch
+    pwgen
+    exercism
+    insomnia
+    emacsGit
+    rink
+    nixfmt
 
     # to install argon2
-    python gnumake
+    python
+    gnumake
 
     # idris
     idris
@@ -19,22 +62,31 @@
     firefox-devedition-bin
 
     # haskell
-    cabal-install # cabal2nix 
-    haskellPackages.styx ghc hlint
-    haskellPackages.hindent haskellPackages.brittany haskellPackages.hpack
+    cabal-install # cabal2nix
+    haskellPackages.styx
+    ghc
+    hlint
+    haskellPackages.hindent
+    haskellPackages.brittany
+    haskellPackages.hpack
     stack
     # (pkgs.haskellPackages.callCabal2nix "fullwidth" ~/projects/fullwidth {})
     # (pkgs.haskellPackages.callCabal2nix "polishnt" ~/projects/polishnt {})
 
+    unity3d
+    mono6
+    msbuild
+    dotnet-sdk
+    vscode
+    (callPackage ~/projects/nixpkgs/pkgs/development/tools/omnisharp-roslyn { })
   ];
 
-  home.sessionVariables = {
-    MOZ_USE_XINPUT2 = 1;
-  };
+  home.sessionVariables = { MOZ_USE_XINPUT2 = 1; };
 
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+      url =
+        "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
     }))
   ];
 
@@ -50,27 +102,21 @@
       userName = "Aria Edmonds";
       userEmail = "aria@ar1as.space";
       lfs.enable = true;
-      extraConfig = {
-        github = {
-          user = "ar1a";
-        };
-      };
+      extraConfig = { github = { user = "ar1a"; }; };
       ignores = [ ".direnv" ".envrc" ];
     };
 
     rofi = {
       enable = true;
       extraConfig = ''
-      rofi.modi: window,run,ssh,combi
-      rofi.ssh-client: mosh
-      rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
-      rofi.combi-modi: window,drun,ssh
+        rofi.modi: window,run,ssh,combi
+        rofi.ssh-client: mosh
+        rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+        rofi.combi-modi: window,drun,ssh
       '';
       terminal = "termite";
       theme = "Arc-Dark";
     };
-
-
 
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
@@ -176,7 +222,6 @@
         # label-visible = "%index%";
         # label-visible-padding = 1;
       };
-
 
       "module/date" = {
         type = "internal/date";
