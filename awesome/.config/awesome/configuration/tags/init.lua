@@ -18,7 +18,7 @@ local tags = {
   {
     icon = icons.social,
     type = 'social',
-    defaultApp = 'Discord',
+    defaultApp = 'station',
     screen = 1
   },
   {

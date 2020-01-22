@@ -50,6 +50,7 @@
     emacsGit
     rink
     nixfmt
+    station
 
     #material-awesome things
     materia-theme
