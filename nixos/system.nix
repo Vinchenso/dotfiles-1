@@ -103,6 +103,7 @@
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.windowManager.bspwm.enable = true;
+  services.xserver.windowManager.awesome.enable = true;
   # services.xserver.xkbOptions = "compose:ralt";
 
   sound.enable = true;

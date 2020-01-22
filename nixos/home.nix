@@ -51,6 +51,11 @@
     rink
     nixfmt
 
+    #material-awesome things
+    materia-theme
+    papirus-icon-theme
+    lxappearance
+
     # to install argon2
     python
     gnumake
