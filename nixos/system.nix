@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   boot.cleanTmpDir = true;
@@ -8,13 +8,32 @@
 
   environment.etc.current-nixos-config.source = ./.;
   environment.systemPackages = with pkgs; [
-    wget vim git ripgrep fd stow exa nix-index
-    gnupg fzf atool file tmux pv binutils pciutils
+    wget
+    vim
+    git
+    ripgrep
+    fd
+    stow
+    exa
+    nix-index
+    gnupg
+    fzf
+    atool
+    file
+    tmux
+    pv
+    binutils
+    pciutils
   ];
 
   fonts.fontconfig.defaultFonts.monospace = [ "Source Code Pro" ];
   fonts.fonts = with pkgs; [
-    fira-code-symbols noto-fonts symbola noto-fonts-cjk font-awesome_5 jost
+    fira-code-symbols
+    noto-fonts
+    symbola
+    noto-fonts-cjk
+    font-awesome_5
+    jost
     source-code-pro
   ];
   fonts.fontconfig.localConf = ''
@@ -27,7 +46,11 @@
 
   hardware.pulseaudio.enable = true;
 
-  networking.extraHosts = builtins.readFile (builtins.fetchurl { name = "blocked_hosts.txt"; url = "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext"; });
+  networking.extraHosts = builtins.readFile (builtins.fetchurl {
+    name = "blocked_hosts.txt";
+    url =
+      "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext";
+  });
   networking.networkmanager.enable = true;
   networking.search = [ "home.daz.cat" "daz.cat" ];
 
@@ -35,7 +58,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
   programs.mosh.enable = true;
   programs.mtr.enable = true;
 
