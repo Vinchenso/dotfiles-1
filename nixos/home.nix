@@ -55,6 +55,7 @@
     materia-theme
     papirus-icon-theme
     lxappearance
+    xfce.xfce4-power-manager
 
     # to install argon2
     python
