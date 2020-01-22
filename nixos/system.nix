@@ -35,6 +35,7 @@
     font-awesome_5
     jost
     source-code-pro
+    roboto
   ];
   fonts.fontconfig.localConf = ''
     <alias>

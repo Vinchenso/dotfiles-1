@@ -56,6 +56,8 @@
     papirus-icon-theme
     lxappearance
     xfce.xfce4-power-manager
+    acpi
+    iw
 
     # to install argon2
     python

@@ -5,7 +5,7 @@ return wibox.widget {
   wibox.widget {
     wibox.widget {
       text = 'Hardware monitor',
-      font = 'Roboto medium 12',
+      font = 'Jost 12',
       widget = wibox.widget.textbox
     },
     widget = mat_list_item

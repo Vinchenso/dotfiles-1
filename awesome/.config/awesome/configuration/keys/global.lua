@@ -12,13 +12,13 @@ local globalKeys =
   -- Hotkeys
   awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
   -- Tag browsing
-  awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
+  awful.key({modkey}, 'k', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
+  awful.key({modkey}, 'j', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
   -- Default client focus
   awful.key(
     {modkey},
-    'd',
+    'h',
     function()
       awful.client.focus.byidx(1)
     end,
@@ -26,7 +26,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'a',
+    'l',
     function()
       awful.client.focus.byidx(-1)
     end,
@@ -34,7 +34,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'e',
+    'd',
     function()
       _G.screen.primary.left_panel:toggle(true)
     end,
@@ -53,29 +53,31 @@ local globalKeys =
     {description = 'go back', group = 'client'}
   ),
   -- Programms
-  awful.key(
-    {modkey},
-    'l',
-    function()
-      awful.spawn(apps.default.lock)
-    end
-  ),
+  -- awful.key(
+  --   {modkey},
+  --   'l',
+  --   function()
+  --     awful.spawn(apps.default.lock)
+  --   end
+  -- ),
   awful.key(
     {},
     'Print',
     function()
-      awful.util.spawn_with_shell('maim -s | xclip -selection clipboard -t image/png')
+      awful.util.spawn_with_shell('rofi-ss')
     end
   ),
   -- Standard program
   awful.key(
     {modkey},
-    'x',
+    'Return',
     function()
       awful.spawn(apps.default.terminal)
     end,
     {description = 'open a terminal', group = 'launcher'}
   ),
+  awful.key({modkey}, 'w', function() awful.spawn('firefox') end, {}),
+  awful.key({modkey}, 'a', function() awful.spawn('emacs') end, {}),
   awful.key({modkey, 'Control'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
   awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
   awful.key(
@@ -190,7 +192,7 @@ local globalKeys =
     {},
     'XF86MonBrightnessUp',
     function()
-      awful.spawn('xbacklight -inc 10')
+      awful.spawn('light -A 10')
     end,
     {description = '+10%', group = 'hotkeys'}
   ),
@@ -198,7 +200,7 @@ local globalKeys =
     {},
     'XF86MonBrightnessDown',
     function()
-      awful.spawn('xbacklight -dec 10')
+      awful.spawn('light -U 10')
     end,
     {description = '-10%', group = 'hotkeys'}
   ),
