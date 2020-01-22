@@ -78,6 +78,8 @@ local globalKeys =
   ),
   awful.key({modkey}, 'w', function() awful.spawn('firefox') end, {}),
   awful.key({modkey}, 'a', function() awful.spawn('emacs') end, {}),
+  awful.key({modkey}, 'space', function() awful.spawn('rofi-pass') end, {}),
+  awful.key({modkey, 'Shift'}, 'space', function() awful.spawn('rofi-pass --insert') end, {}),
   awful.key({modkey, 'Control'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
   awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
   awful.key(
@@ -128,22 +130,22 @@ local globalKeys =
     end,
     {description = 'decrease the number of columns', group = 'layout'}
   ),
-  awful.key(
-    {modkey},
-    'space',
-    function()
-      awful.layout.inc(1)
-    end,
-    {description = 'select next', group = 'layout'}
-  ),
-  awful.key(
-    {modkey, 'Shift'},
-    'space',
-    function()
-      awful.layout.inc(-1)
-    end,
-    {description = 'select previous', group = 'layout'}
-  ),
+  -- awful.key(
+  --   {modkey},
+  --   'space',
+  --   function()
+  --     awful.layout.inc(1)
+  --   end,
+  --   {description = 'select next', group = 'layout'}
+  -- ),
+  -- awful.key(
+  --   {modkey, 'Shift'},
+  --   'space',
+  --   function()
+  --     awful.layout.inc(-1)
+  --   end,
+  --   {description = 'select previous', group = 'layout'}
+  -- ),
   awful.key(
     {modkey, 'Control'},
     'n',
